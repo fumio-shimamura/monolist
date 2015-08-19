@@ -7,4 +7,11 @@
   </div>
 </div>
 
+<div class="ranking">
+  <div class="button">
+    <%= link_to 'Want ranking' , ranking_want_path, class: "btn btn-success btn-md" %>
+    <%= link_to 'Have ranking' , ranking_have_path, class: "btn btn-warning btn-md" %>
+    </div>
+</div>
+
 <%= render 'items/list' , items: @items %>

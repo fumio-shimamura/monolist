@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="container-inner inner-default clearfix">
+    <% i = 0 %>
+    <% rank = 0 %>
+    <% rank_items.each do |item| %>
+      <% ranking = rank_rankings[i] %>
+      <% count = rank_counts[i] %>
+      <% i = i + 1 %>
+      <div class="item-box">
+        <div class="image">
+          <div class="img-wrap">
+            <% if item.large_image.present? %>
+              <%= image_tag(item.large_image , alt: item.title) %>
+            <% else %>
+              <%= image_tag("no-image.png" , alt: item.title) %>
+            <% end %>
+          </div>
+        </div>
+        <div class="detail">
+          <p class="title">
+            <%= item.title %>
+          </p>
+        </div>
+        <div class="detail">
+          <p class="ranking">
+            ランキング<%= ranking %>位　　<%= count %> <%= type %> 
+          </p>
+        </div>
+        <%= render 'items/action' , item: item if logged_in? %>
+      </div>
+    <% end %>
+  </div>
+</div>
