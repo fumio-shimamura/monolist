@@ -1,5 +1,5 @@
 class RankingController < ApplicationController
-  after_action :set_rank 
+  after_action :set_rank
   
   @rank = []
 
